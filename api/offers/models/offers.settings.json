@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offers",
+  "info": {
+    "name": "Offers"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "period": {
+      "type": "enumeration",
+      "enum": [
+        "month",
+        "year"
+      ]
+    },
+    "order": {
+      "via": "offer",
+      "model": "orders"
+    },
+    "users": {
+      "via": "current_offer",
+      "plugin": "users-permissions",
+      "collection": "user"
+    }
+  }
+}
