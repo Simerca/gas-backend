@@ -12,7 +12,7 @@
     "name": {
       "type": "string"
     },
-    "packageid": {
+    "url": {
       "type": "string"
     },
     "icon": {
@@ -45,6 +45,21 @@
     },
     "publish_date": {
       "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "aborted",
+        "published",
+        "pending",
+        "draft"
+      ]
+    },
+    "categorie": {
+      "model": "categories"
+    },
+    "featured": {
+      "type": "boolean"
     }
   }
 }
